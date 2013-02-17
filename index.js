@@ -46,8 +46,6 @@ module.exports = function(el, state, container) {
     setState(lastFlags, 0)
     setState(flags, 1)
     lastFlags = flags
-
-    document.getElementById('touch-debug').innerHTML=(state.forward?'f':'')+(state.backward?'b':'')+(state.left?'l':'')+(state.right?'r':'')+(state.jump?'j':'')
   }
   function unTouchControls() {
     setState(lastFlags, 0)
