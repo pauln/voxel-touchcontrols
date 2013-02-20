@@ -1,10 +1,22 @@
 {
-  "name": "voxel-touchcontrols",
-  "description": "touch controls for voxel engine",
-  "author": {"name": "Paul Nicholls", "email": "paul.n@next.gen.nz"},
-  "repository": {"type": "git", "url": "git@github.com:pauln/voxel-touchcontrols.git"},
-  "version": "0.0.1",
-  "dependencies": {
-    "voxel-control": "0.0.5"
+  "name": "voxel-hello-world",
+  "version": "0.0.2",
+  "repository": {
+    "type":"git",
+    "url": "git@github.com:maxogden/voxel-hello-world.git"
+  },
+  "devDependencies": {
+    "voxel-engine": "0.4.3",
+    "voxel-highlight": "0.0.1",
+    "voxel": "0.1.3",
+    "minecraft-skin": "0.0.3",
+    "painterly-textures": "0.0.3",
+    "voxel-forest": "0.0.0",
+    "voxel-perlin-terrain": "0.0.5",
+    "browservefy": "0.0.1",
+    "toolbar": "0.0.2"
+  },
+  "scripts": {
+    "start": "echo \"open localhost:8080/\" && ./node_modules/.bin/browservefy index.js 8080 -- -d"
   }
 }
