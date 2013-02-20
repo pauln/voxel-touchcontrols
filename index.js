@@ -80,8 +80,8 @@ module.exports = function(el, state, container) {
     dx = containerTouch.x - touch.clientX
     dy = containerTouch.y - touch.clientY
 
-    delta.x_rotation_accum = dy
-    delta.y_rotation_accum = dx
+    delta.x_rotation_accum = dy*2
+    delta.y_rotation_accum = dx*8
     state.write(delta)
 
     containerTouch.x = touch.clientX
