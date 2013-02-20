@@ -1,8 +1,8 @@
 # voxel-touchcontrols
 
-touch controls for Voxel Engine
+Touch controls for Voxel Engine
 
-a basic navigation pad is used for movement, with dragging on the main area to look in different directions
+A basic navigation pad is used for movement, with dragging on the main area to look in different directions.  [A demo](http://pauln.github.com/voxel-touchcontrols/) is now available; please note that it may take a little while to fully load.  Chrome Beta for Android has WebGL behind a flag - please enable it before trying the demo.
 
 ## install
 
