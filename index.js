@@ -2,7 +2,7 @@ module.exports = function(el, state, container) {
   var ul = el.getElementsByTagName('ul')[0]
   var lastFlags = []
   var controlsTouch = -1
-  var containerTouch = {"id": -1, "x":-1, "y":-1}
+  var containerTouch = {"id":-1, "x":-1, "y":-1}
   el.addEventListener('touchstart', startTouchControls)
   el.addEventListener('touchmove', handleTouchControls)
   el.addEventListener('touchend', unTouchControls)
@@ -40,7 +40,7 @@ module.exports = function(el, state, container) {
 
     if (flags.indexOf('jump') === -1) {
       for (flag in lastFlags) {
-        if (flags.indexOf(lastFlags[flag])!==-1) {
+        if (flags.indexOf(lastFlags[flag]) !== -1) {
           lastFlags.splice(flag, 1)
         }
       }
@@ -55,8 +55,8 @@ module.exports = function(el, state, container) {
   }
   function unTouchControls() {
     setState(lastFlags, 0)
-    lastFlags=[]
-    controlsTouch=-1
+    lastFlags = []
+    controlsTouch = -1
   }
   function setState(states, value) {
     var delta = {}
@@ -86,14 +86,14 @@ module.exports = function(el, state, container) {
     dx = containerTouch.x - touch.clientX
     dy = containerTouch.y - touch.clientY
 
-    delta.x_rotation_accum = dy*2
-    delta.y_rotation_accum = dx*8
+    delta.x_rotation_accum = dy * 2
+    delta.y_rotation_accum = dx * 8
     state.write(delta)
 
     containerTouch.x = touch.clientX
     containerTouch.y = touch.clientY
   }
   function unTouchContainer(event) {
-    containerTouch = {"id": -1, "x":-1, "y":-1}
+    containerTouch = {"id":-1, "x":-1, "y":-1}
   }
 }
