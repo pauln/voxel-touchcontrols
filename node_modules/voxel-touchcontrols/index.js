@@ -38,14 +38,20 @@ module.exports = function(el, state, container) {
     if (top > 100 && left > 50 && left < 100) flags.push('backward')
     if (top > 50 && top < 100 && left > 50 && left < 100) flags.push('jump')
 
-    for (flag in lastFlags) {
-      if (flags.indexOf(lastFlags[flag])!==-1) {
-        lastFlags.splice(flag, 1)
+    if (flags.indexOf('jump') === -1) {
+      for (flag in lastFlags) {
+        if (flags.indexOf(lastFlags[flag])!==-1) {
+          lastFlags.splice(flag, 1)
+        }
       }
+      setState(lastFlags, 0)
+      setState(flags, 1)
+      lastFlags = flags
+    } else if (lastFlags.indexOf('jump') === -1) {
+      // Start jumping (in additional to existing movement)
+      lastFlags.push('jump')
+      setState(['jump'], 1)
     }
-    setState(lastFlags, 0)
-    setState(flags, 1)
-    lastFlags = flags
   }
   function unTouchControls() {
     setState(lastFlags, 0)
